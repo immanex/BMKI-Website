@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bmki-purple: #4A148C;
+  --color-bmki-purple-light: #7b1fa2;
+  --color-bmki-gold: #FFD700;
+  --color-bmki-gold-hover: #e6c200;
+  --color-bmki-dark: #0F0F0F;
+  --color-bmki-darker: #050505;
+
+  --font-display: "Anton", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-accent: "Space Grotesk", sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-bmki-dark)] text-white font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom Utilities for the Recipe */
+@layer utilities {
+  .text-display-massive {
+    font-family: var(--font-display);
+    font-size: min(20vw, 12rem);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .text-display-large {
+    font-family: var(--font-display);
+    font-size: min(12vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  
+  .meta-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  /* Skewed container—adds dynamism */
+  .skewed-wrapper {
+    transform: skewX(-5deg);
+  }
+}
+
